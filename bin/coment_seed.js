@@ -11,13 +11,12 @@ function getRandomUser() {
     User.find().exec((err, result) => {
         let randomIndex = Math.floor(Math.random() * (result.length + 1));
         let coment = new Coment({
-            coment : "ola k ase",
-            user_id: result[randomIndex]._id,
-            user_name : result[randomIndex].username,
-            event_id : result[randomIndex]._id,
-            event_name : result[randomIndex].name
+            description : "ola k ase",
+            user_id: "5a8174230abd42c57aef7b10",
+            user_name : "pepe",
+            event_id : "5a817bc8f8f895c8908f00b6",
+            event_name : "Partido de fútbol 5"
         })
-        //recorre el array de users y crea objetos
         coment.save((err) => {
             if (err) {
                 throw err;

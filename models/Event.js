@@ -4,8 +4,13 @@ const Schema = mongoose.Schema;
 const eventSchema = new Schema({
     type: String,
     name: String,
+    user_id: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
+    },
+    user_name: String,
     limit: Number,
-    Price: Number,
+    price: Number,
     location: {
         lat: String,
         lng: String
@@ -15,5 +20,5 @@ const eventSchema = new Schema({
         timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
     });
 
-var Place = mongoose.model("Place", eventSchema);
-module.exports = Place;
+var Event = mongoose.model("Event", eventSchema);
+module.exports = Event;
