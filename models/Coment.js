@@ -9,6 +9,7 @@ const comentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User"
     },
+    user_name: String,
     event_id: {
         type: Schema.Types.ObjectId,
         ref: "Event"
